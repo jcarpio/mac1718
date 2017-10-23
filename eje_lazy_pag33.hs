@@ -1,0 +1,2 @@
+
+primero x _ = x
