@@ -30,6 +30,21 @@ filtra f l = [x | x <- l, f x]
 -- Main> evaluaciones [1,2,3] [doble, triple]
 -- [[2,3],[4,6],[6,9]]
 
+doble x = x + x
+triple x = x + x + x
+ 
+evaluaciones v lf = [[f x | f <- lf]| x <- v]
+
+
+-- 6. Utilizar la función anterior  para evaluar si los siguientes valores 
+-- [0,(3.14/2),((-3.14)/2), 3.14,(-3.14)]  cumplen  que  el  seno  es  mayor  
+-- que  0,  el  coseno  es  0  y  la  tangente  es  0.  
+-- Componer la lista de funciones utilizando el operador de composición “.”. El resultado  
+-- para este ejemplo será:
+-- [[False,False,True],[True,False,False],[False,False,False],[True,False,False
+-- ],[False,False,False]]
+
+--  evaluaciones [0,(3.14/2),((-3.14)/2), 3.14,(-3.14)] [(>0).sin, (==0).cos, (==0).tan]
 
 -- 7. Implementar  una  función  que  devuelva  la  descomposición  en  factores  primos
 --  de un número entero. La función devolverá una lista de tuplas tal que la primera 
@@ -38,6 +53,7 @@ filtra f l = [x | x <- l, f x]
 
 -- Main> descomposicion 60
 -- [(2,2),(3,1),(5,1)]
+
 
 num_div x y 
   | x `mod` y == 0 && x > y  = 1 + num_div (div x y) y
