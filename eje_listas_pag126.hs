@@ -62,3 +62,14 @@ num_div x y
 descomposicion x = [(n, num_div x n) | n <- primos_x x, x `mod` n == 0]
 
 
+-- 8. Averiguar qué devuelven las funciones takeWhile y dropWhile
+-- e implementar su propia versión. Llamar a las nuevas funciones 
+-- tomarMientras y eliminarMientras
+
+tomarMientras f l = [x| x <- l, f x ] 
+-- eliminarMientras f l = [x| x <- l, f x == ]
+
+constante1 x = 1
+
+
+integral f a b t = sum [(f x) * t | x <- [a, a+t .. b-t]]
